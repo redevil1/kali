@@ -2,7 +2,7 @@ FROM kalilinux/kali-rolling
 
 RUN apt clean
 
-RUN apt update && apt install -y openssh-server tmux nano
+RUN apt update && apt install -y openssh-server tmux nano && apt clean
 
 RUN echo 'root:root' | chpasswd
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
